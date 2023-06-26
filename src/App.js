@@ -1,7 +1,10 @@
 import { observer } from "mobx-react";
 import "./App.css";
+import { useContext } from "react";
+import { useCounterStore } from "./context/counterContext";
 
-function App({ myCounter }) {
+function App() {
+  const myCounter = useCounterStore();
   return (
     <div style={{ textAlign: "center", padding: 16 }}>
       카운트: {myCounter.count}

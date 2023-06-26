@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import counterStore from "./countStore";
+import { CounterProvier } from "./context/counterContext";
 
 const store = new counterStore();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App myCounter={store} />
+    <CounterProvier value={store}>
+      <App />
+    </CounterProvier>
   </React.StrictMode>
 );
 
